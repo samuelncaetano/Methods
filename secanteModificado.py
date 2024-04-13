@@ -1,8 +1,10 @@
 import pandas as pd
 import sympy as sp
 
+
 def func(x):
     return 2*x**3 - 11.7*x**2 + 17.7*x - 5
+
 
 def secanteModificado(x, delta, iterations):
     table_data = []
@@ -19,8 +21,10 @@ def secanteModificado(x, delta, iterations):
 
         x = xr
 
-    table = pd.DataFrame(table_data, columns=['Iteração', 'x', 'delta', 'fx', 'fd', 'xr'])
+    table = pd.DataFrame(table_data, columns=[
+                         'Iteração', 'x', 'delta', 'fx', 'fd', 'xr'])
     return table
+
 
 resultado = secanteModificado(3, 0.01, 5)
 print(resultado)
